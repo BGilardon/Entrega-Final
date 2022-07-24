@@ -1,0 +1,22 @@
+{% extends 'ProyectoCoderApp/base.html' %}
+{% load static %}
+
+{% block tituloPagina %}
+Login - App Coder
+{% endblock %}
+
+{% block b2 %}
+<br>
+<br><br><br>
+<br>
+<section class="bg-light py-5">
+    <div class="container px-5">
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
