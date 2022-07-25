@@ -16,21 +16,22 @@ Register - App Coder
                 {% for post in posteos %}
                 <label class="list-group-item d-flex gap-3">
                 <span class="pt-1 form-checked-content">
-                    <tr>
-                        <h6><strong style="font-size: 150%">{{post.titulo}}</strong></h6>
-                        <h6><strong style="font-size: 115%">{{post.subtitulo}}</strong></h6>
-                        <h6><strong style="font-size: 90%">{{post.autor}}</strong></h6>
-                    </tr>
-                    <small class="d-block text-muted">
-                        <tr>
-                            <td>
-                            <p>{{post.fecha}}</p>
-                            </td>
-                            <td>
-                                <a href="{% url 'posteo_update' post.id %}" class="text-primary badge badge-primary text-decoration-none"> <i class="bi bi-pencil-square"></i> Editar</a>
-                                <a href="{% url 'posteo_delete' post.id %}" class="text-danger badge badge-danger text-decoration-none"> <i class="bi bi-x-square"></i> Eliminar</a>
-                            </td>
-                        </tr>
+                    <dl>
+                        <dt><strong style="font-size: 150%">{{post.titulo}}</strong></dt>
+                        <dt><strong style="font-size: 115%">{{post.subtitulo}}</strong></dt>
+                    </dl>
+                    
+                    <dl style="font-size: 90%">
+                        <dt><small class="text-muted">{{post.autor}}</small></dt>
+                        <dt><small class="text-muted">{{post.fecha}}</small></dt>
+                    </dl>
+
+                    <dl>
+                        <dt>
+                            <a href="{% url 'posteo_update' post.id %}" class="text-primary badge badge-primary text-decoration-none"> <i class="bi bi-pencil-square"></i> Editar</a>
+                            <a href="{% url 'posteo_delete' post.id %}" class="text-danger badge badge-danger text-decoration-none"> <i class="bi bi-x-square"></i> Eliminar</a>
+                        </dt>
+                    </dl>
                     </small>
                 </span>
                 </label>

@@ -1,8 +1,6 @@
-import datetime
 from distutils.log import INFO
 
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
 
 from .models import *
 from .forms import *
@@ -119,7 +117,7 @@ def crearPosteos(request):
             
             info = formulario.cleaned_data
 
-            posteo = Posteo(titulo=info["titulo"], subtitulo=info["subtitulo"],autor=info["autor"], cuerpo=info["cuerpo"], fecha = info["fecha"] , imagen = info["imagen"])
+            posteo = Posteo(titulo=info["titulo"], subtitulo=info["subtitulo"], autor=info["autor"], cuerpo=info["cuerpo"], fecha = info["fecha"] , imagen = info["imagen"])
             
             posteo.save()
 
@@ -146,7 +144,7 @@ class PosteoUpdate(UpdateView):
 
     model = Posteo
     success_url = "/coderapp/posteos"                   # atenciooooooooon!!!! a la primer /
-    fields = ["titulo", "cuerpo", "fecha", "imagen"]
+    fields = ["titulo","subtitulo","cuerpo", "fecha", "imagen"]
 
 class PosteoDelete(DeleteView):
 

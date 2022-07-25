@@ -9,6 +9,9 @@
         <meta name="author" content="" />
         <title>Clean Blog - Start Bootstrap Theme</title>
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicom.ico' %}" />
+        <script>window.CKEDITOR_BASEPATH = '/static_root/ckeditor/ckeditor/';</script>
+        <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+        <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -45,9 +48,6 @@
         </nav>
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-               
-            </div>
         </header>
         
         {% block b2 %}

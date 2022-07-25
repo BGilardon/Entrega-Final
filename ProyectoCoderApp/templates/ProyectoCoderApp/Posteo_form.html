@@ -2,16 +2,18 @@
 {% load static %}
 
 {% block tituloPagina %}
-Eliminar Posteo - App Coder
+Register - App Coder
 {% endblock %}
 
+
+
 {% block b2 %}
-    <form action="" method="post">
-        {% csrf_token %}
+<form action="" method="post">
+    {% csrf_token %}
 
-        {{form.as_p}}
+    {{form.as_p}}
 
-        <input type="submit" value="Guardar Posteo">
-    </form>
+    <input type="submit" value="Sí, Eliminar.">
+</form>
 {% endblock %}
 

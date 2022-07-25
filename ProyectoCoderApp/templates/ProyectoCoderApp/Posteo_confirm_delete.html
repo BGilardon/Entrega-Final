@@ -1,0 +1,15 @@
+{% extends 'ProyectoCoderApp/base.html' %}
+{% load static %}
+
+{% block tituloPagina %}
+Eliminar Posteo - App Coder
+{% endblock %}
+
+{% block b2 %}
+    <form action="" method="post">
+        {% csrf_token %}
+        ¿Está seguro que quiere eliminar al estudiante: {{ object.nombre }} {{ object.apellido }}?
+        <input type="submit" value="Sí, Eliminar.">
+    </form>
+{% endblock %}
+

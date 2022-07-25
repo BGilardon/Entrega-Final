@@ -2,6 +2,7 @@ from pyexpat import model
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from ckeditor.widgets import CKEditorWidget
 
 from .models import Avatar
 
@@ -12,7 +13,7 @@ class posteoCrear(forms.Form):
     titulo = forms.CharField(max_length=30)
     subtitulo = forms.CharField(max_length=50)
     autor = forms.CharField(max_length=30)
-    cuerpo = forms.CharField(max_length=200)   
+    cuerpo = forms.CharField(widget=CKEditorWidget)   
     fecha = forms.DateField()
     imagen = forms.ImageField(label="Imagen", required=False)
     
