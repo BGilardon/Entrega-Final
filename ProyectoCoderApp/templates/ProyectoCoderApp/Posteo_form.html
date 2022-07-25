@@ -5,15 +5,38 @@
 Register - App Coder
 {% endblock %}
 
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
 
 
 {% block b2 %}
-<form action="" method="post">
-    {% csrf_token %}
+<section class="bg-light py-5">
+    <div class="container px-5">
+        <h3>Formulario Posteo:</h3>
+        <br>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                    Ingresar Formulario
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
 
-    {{form.as_p}}
+                            {{form.as_p}}
 
-    <input type="submit" value="Sí, Eliminar.">
-</form>
+                        <div class="card-body text-center">
+                            <input type="submit" class="btn btn-primary" value="Guardar Cambios" >
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 

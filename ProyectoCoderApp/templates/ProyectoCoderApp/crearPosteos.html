@@ -5,6 +5,11 @@
 Register - App Coder
 {% endblock %}
 
+<script>window.CKEDITOR_BASEPATH = '/staticfiles/ckeditor/ckeditor/';</script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+
 
 
 {% block b2 %}
@@ -40,7 +45,7 @@ Register - App Coder
             
                                 <tr> 
                                     <td>Cuerpo: </td> 
-                                    <td><input type= "text" name="cuerpo"></td> 
+                                    <td><input type="text" name="cuerpo"></td> 
                                 </tr>
 
                                 <tr> 
@@ -49,9 +54,8 @@ Register - App Coder
                                 </tr>
 
                                 <tr> 
-
                                     <td>Imagen: </td> 
-                                    <td><input type= "file" name="imagen"></td> 
+                                    <td><input type= "file" name="imagen"></td>
                                 </tr>
                                 
                             </table>

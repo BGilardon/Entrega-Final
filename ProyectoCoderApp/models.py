@@ -2,16 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
-# modelo del avatar
 
 class Posteo(models.Model):
 
     titulo = models.CharField(max_length=30)
     subtitulo = models.CharField(max_length=50, null=True)
     autor = models.CharField(max_length=30, null=True)
-    cuerpo = RichTextField()
+    cuerpo = models.CharField(max_length=30)
     fecha = models.DateField()
-    imagen = models.ImageField(upload_to='media/', blank=True, null=True)
+    imagen = models.FileField(upload_to='media/', blank=True, null=True)
 
 class Avatar(models.Model):
 

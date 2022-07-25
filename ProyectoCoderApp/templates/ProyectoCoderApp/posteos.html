@@ -24,6 +24,9 @@ Register - App Coder
                     <dl style="font-size: 90%">
                         <dt><small class="text-muted">{{post.autor}}</small></dt>
                         <dt><small class="text-muted">{{post.fecha}}</small></dt>
+                        {% if post.imagen.url != 0 %}
+                        <a><img width="200px" class="img-fluid" src="{{post.imagen.url}}" alt="..." /></a>
+                        {% endif %}
                     </dl>
 
                     <dl>
