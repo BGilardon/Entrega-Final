@@ -8,9 +8,9 @@ class Posteo(models.Model):
     titulo = models.CharField(max_length=30)
     subtitulo = models.CharField(max_length=50, null=True)
     autor = models.CharField(max_length=30, null=True)
-    cuerpo = models.CharField(max_length=30)
+    cuerpo = RichTextField()
     fecha = models.DateField()
-    imagen = models.FileField(upload_to='media/', blank=True, null=True)
+    imagen = models.ImageField(upload_to='media/', blank=True, null=True)
 
 class Avatar(models.Model):
 

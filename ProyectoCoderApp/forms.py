@@ -14,9 +14,9 @@ class posteoCrear(forms.Form):
     titulo = forms.CharField(max_length=30)
     subtitulo = forms.CharField(max_length=50)
     autor = forms.CharField(max_length=30)
-    cuerpo = forms.CharField()
+    cuerpo = forms.CharField(widget=CKEditorWidget())
     fecha = forms.DateField()
-    imagen = forms.FileField(label="Imagen", required=False)
+    imagen = forms.ImageField(label="imagen", required=False)
     
     
 

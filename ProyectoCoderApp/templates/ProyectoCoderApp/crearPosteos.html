@@ -5,10 +5,9 @@
 Register - App Coder
 {% endblock %}
 
-<script>window.CKEDITOR_BASEPATH = '/staticfiles/ckeditor/ckeditor/';</script>
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
-
 
 
 
@@ -45,12 +44,12 @@ Register - App Coder
             
                                 <tr> 
                                     <td>Cuerpo: </td> 
-                                    <td><input type="text" name="cuerpo"></td> 
+                                    <td><textarea class="ckeditor" name="cuerpo"></textarea></td> 
                                 </tr>
 
                                 <tr> 
                                     <td>Fecha: </td> 
-                                    <td><input type= "date" name="fecha"></td> 
+                                    <td><input type="date" name="fecha"></td> 
                                 </tr>
 
                                 <tr> 
