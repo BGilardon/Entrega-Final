@@ -5,26 +5,7 @@ Register - App Coder
 {% endblock %}
 
 
-{% block B2 %}
 
-<section class="bg-light py-5">
-    <div class="container px-5">
-       
-        <ul class="posteos">
-
-            {% for posteo in posteos %}
-
-            <li> {{posteo.titulo}}</li>
-            <li> {{posteo.cuerpo}}</li>
-            <li>{{posteo.fecha}}</li>
-            <li><img src="{{posteo.imagen}}"></li>
-            
-            {% endfor %}
-        </ul>
-    </div>
-</section>
-
-{% endblock %}
 
 {% block b2 %}
 <section class="bg-light py-5">
@@ -37,13 +18,18 @@ Register - App Coder
                 <span class="pt-1 form-checked-content">
                     <tr>
                         <h6><strong style="font-size: 150%">{{post.titulo}}</strong></h6>
-                        <h6><strong style="font-size: 115%">subtitulo</strong></h6>
+                        <h6><strong style="font-size: 115%">{{post.subtitulo}}</strong></h6>
+                        <h6><strong style="font-size: 90%">{{post.autor}}</strong></h6>
                     </tr>
                     <small class="d-block text-muted">
                         <tr>
-                        <p>{{post.fecha}}</p>
-                        <p>{{post.cuerpo}}</p>
-                        <p><img src="{{posteo.imagen}}"></p>
+                            <td>
+                            <p>{{post.fecha}}</p>
+                            </td>
+                            <td>
+                                <a href="{% url 'posteo_update' post.id %}" class="text-primary badge badge-primary text-decoration-none"> <i class="bi bi-pencil-square"></i> Editar</a>
+                                <a href="{% url 'posteo_delete' post.id %}" class="text-danger badge badge-danger text-decoration-none"> <i class="bi bi-x-square"></i> Eliminar</a>
+                            </td>
                         </tr>
                     </small>
                 </span>
