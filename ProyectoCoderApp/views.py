@@ -23,6 +23,9 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 #Probando
 
+def campo(request):
+
+    return render(request, 'ProyectoCoderApp/inicio1.html')
 
 def login_request(request):
 
@@ -116,7 +119,7 @@ def crearPosteos(request):
             
             info = formulario.cleaned_data
 
-            posteo = Posteo(titulo=info["titulo"],cuerpo=info["cuerpo"] , fecha = info["fecha"] , imagen = info["imagen"])
+            posteo = Posteo(titulo=info["titulo"], subtitulo=info["subtitulo"],autor=info["autor"], cuerpo=info["cuerpo"], fecha = info["fecha"] , imagen = info["imagen"])
             
             posteo.save()
 
@@ -132,7 +135,20 @@ def crearPosteos(request):
 
 
 
+def perfil(request):
+    pass
 
-def campo(request):
 
-    return render(request, 'ProyectoCoderApp/inicio1.html')
+
+
+
+class PosteoUpdate(UpdateView):
+
+    model = Posteo
+    success_url = "/coderapp/posteos"                   # atenciooooooooon!!!! a la primer /
+    fields = ["titulo", "cuerpo", "fecha", "imagen"]
+
+class PosteoDelete(DeleteView):
+
+    model = Posteo
+    success_url = "/coderapp/posteos"                   # atenciooooooooon!!!! a la primer /

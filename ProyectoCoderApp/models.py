@@ -2,6 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # modelo del avatar
+
+class Posteo(models.Model):
+
+    titulo = models.CharField(max_length=30)
+    subtitulo = models.CharField(max_length=50)
+    autor = models.CharField(max_length=30)
+    cuerpo = models.CharField(max_length=200) 
+    fecha = models.DateField()
+    imagen = models.ImageField(upload_to='media', blank=True, null=True)
+
 class Avatar(models.Model):
 
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -17,15 +27,7 @@ class Curso(models.Model):
     nombre = models.CharField(max_length=30) # Texto
     comision = models.IntegerField()
 
-class Posteo(models.Model):
 
-    # id por defecto
-    titulo = models.CharField(max_length=30) # Texto
-    cuerpo = models.CharField(max_length=30) # Texto
-    fecha = models.DateField()
-    imagen = models.ImageField(upload_to='media', blank=True, null=True)
-    
-     # Email - Opcional
 
 class Profesor(models.Model):
 

@@ -1,0 +1,17 @@
+{% extends 'ProyectoCoderApp/base.html' %}
+{% load static %}
+
+{% block tituloPagina %}
+Eliminar Posteo - App Coder
+{% endblock %}
+
+{% block b2 %}
+    <form action="" method="post">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <input type="submit" value="Guardar Posteo">
+    </form>
+{% endblock %}
+
