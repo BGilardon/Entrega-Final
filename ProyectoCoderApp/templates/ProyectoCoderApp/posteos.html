@@ -31,6 +31,7 @@ Register - App Coder
 
                     <dl>
                         <dt>
+                            <a href="{% url 'posteo_detail' post.id %}" class="text-primary badge badge-primary text-decoration-none">Ver Mas</a>
                             <a href="{% url 'posteo_update' post.id %}" class="text-primary badge badge-primary text-decoration-none"> <i class="bi bi-pencil-square"></i> Editar</a>
                             <a href="{% url 'posteo_delete' post.id %}" class="text-danger badge badge-danger text-decoration-none"> <i class="bi bi-x-square"></i> Eliminar</a>
                         </dt>

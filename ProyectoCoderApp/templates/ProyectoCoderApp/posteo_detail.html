@@ -1,0 +1,29 @@
+{% extends 'ProyectoCoderApp/base.html' %}
+{% load static %}
+
+{% block tituloPagina %}
+Editar Perfil - App Coder
+{% endblock %}
+
+{% block b2 %}
+<article>
+    <!-- Post header-->
+    <header class="mb-4">
+        <!-- Post title-->
+        <h1 class="fw-bolder mb-1">{{posteo.titulo}}</h1>
+        <!-- Post meta content-->
+        <div class="text-muted fst-italic mb-2">Posted on {{posteo.fecha}} by {{posteo.autor}}</div>
+        <!-- Post categories-->
+    </header>
+    <!-- Preview image figure-->
+    {% if post.imagen.url != 0 %}
+    <a><img class="img-fluid" src="{{posteo.imagen.url}}" alt="..." /></a>
+    {% endif %}
+    <!-- Post content-->
+    <section class="mb-5">
+        <h2 class="fw-bolder mb-4 mt-5">{{posteo.subtitulo}}</h2>
+        <p class="fs-5 mb-4">{{posteo.cuerpo}}</p>
+    </section>
+</article>
+
+{% endblock %}

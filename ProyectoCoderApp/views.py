@@ -133,6 +133,10 @@ def crearPosteos(request):
         return render(request,"ProyectoCoderApp/crearPosteos.html",{"form":formulario})
 
 
+@login_required
+def perfil(request):
+    
+   return render(request, 'ProyectoCoderApp/perfil.html')
 
 
 @login_required
@@ -147,13 +151,14 @@ def editar_perfil(request):
         if form.is_valid():
 
             info = form.cleaned_data
+            user.username = info["username"]
             user.email = info["email"]
             user.first_name = info["first_name"]
             user.last_name = info["last_name"]
             # user.password = info["password1"]
 
             user.save()
-            return redirect("inicio")
+            return redirect("campo")
 
     else:
         form = UserEditForm(initial={"username": user.username, "email": user.email, "first_name": user.first_name, "last_name": user.last_name})
@@ -174,3 +179,9 @@ class PosteoDelete(DeleteView):
 
     model = Posteo
     success_url = "/coderapp/posteos"                   # atenciooooooooon!!!! a la primer /
+
+def posteo_detail(request, posteo_id):
+
+    posteo = Posteo.objects.get(id=posteo_id)
+    
+    return render(request, "ProyectoCoderApp/posteo_detail.html", {"posteo": posteo})
