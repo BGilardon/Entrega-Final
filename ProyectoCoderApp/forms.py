@@ -34,5 +34,13 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2', 'first_name', 'last_name']
 
-      
+
+class UserEditForm(UserCreationForm):
+
+    email = forms.EmailField(label="Email")
+    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput, required=False)  # la contraseña no se vea
+    password2 = forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput, required=False)
+
+    first_name = forms.CharField(label="Nombre")
+    last_name = forms.CharField(label="Apellido")
 

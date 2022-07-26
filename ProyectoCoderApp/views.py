@@ -6,6 +6,7 @@ from .models import *
 from .forms import *
 from django.db.models import Q
 
+
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -133,8 +134,25 @@ def crearPosteos(request):
 
 
 
-def perfil(request):
-    pass
+
+@login_required
+def editar_perfil(request):
+
+    user = request.user  # usuario con el que estamos loggueados
+
+    if request.method == "POST":
+
+        form = UserEditForm(request.POST)  # cargamos datos llenados
+
+        if form.is_valid():
+
+            info = form.cleaned_data
+            user.email = info["email"]
+            user.first_name = info["first_name"]
+            user.last_name = info["last_name"]
+            # user.password = info["password1"]
+
+            user.save()
 
 
 
