@@ -153,6 +153,12 @@ def editar_perfil(request):
             # user.password = info["password1"]
 
             user.save()
+            return redirect("inicio")
+
+    else:
+        form = UserEditForm(initial={"username": user.username, "email": user.email, "first_name": user.first_name, "last_name": user.last_name})
+
+    return render(request, "ProyectoCoderApp/editar_perfil.html", {"form": form})
 
 
 

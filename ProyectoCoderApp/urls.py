@@ -17,6 +17,8 @@ urlpatterns = [
     path(r'^editar/(?P<pk>\d+)$', PosteoUpdate.as_view(), name="posteo_update"),
     path(r'^eliminar/(?P<pk>\d+)$', PosteoDelete.as_view(), name="posteo_delete"),
 
+    path('editar_perfil', editar_perfil, name="editar_perfil"),
+
 
     # path('base/', base),
 ]
