@@ -16,7 +16,7 @@ Editar Perfil - App Coder
         <!-- Post categories-->
     </header>
     <!-- Preview image figure-->
-    {% if post.imagen.url != 0 %}
+    {% if post.imagen.url != null %}
     <a><img width="500px" class="img-fluid" src="{{posteo.imagen.url}}" alt="..." /></a>
     {% endif %}
     <!-- Post content-->
